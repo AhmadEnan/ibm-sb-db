@@ -1,5 +1,10 @@
 <?php
-require_once "C:/xampp/htdocs/ibm/vendor/autoload.php"; // Include the Composer autoloader
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+ 
+$envdir = $_SESSION["env_dir"];
+require_once $envdir . "/vendor/autoload.php"; // Include the Composer autoloader
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
