@@ -9,14 +9,13 @@ if(!(isset($_POST["submit"])))
 // Get user inputs from the form
 $email = $_POST['email'];
 $password = $_POST['password'];
-
+$forgot = $_POST['forgot'];
 require_once "dbh.php";
 require_once "../functions/functions.php";
 
-authUser($conn, $email, $password);
+if($forgot !== 0)
+{
 
-// if(emptyInputLogin($email, $password) !== false) {
-//     header("Location: ../../public/login.php?error=empty");
-//     exit();
-// }
-?>
+}
+
+authUser($conn, $email, $password);
