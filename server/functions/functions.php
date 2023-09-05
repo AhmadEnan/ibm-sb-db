@@ -14,7 +14,7 @@ use GuzzleHttp\Utils;
 // Updates all the global variables in the current session
 function updateSessionVariables($user)
 {
-    if(!session_status() === PHP_SESSION_ACTIVE) session_start();
+    session_start();
 
     $_SESSION["userid"] = $user["user_id"];
     $_SESSION["username"] = $user["user_name"];
